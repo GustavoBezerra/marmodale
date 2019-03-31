@@ -1,14 +1,14 @@
 package br.com.marmodale.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 /**
  * Category is a group of ingredients.
@@ -17,7 +17,11 @@ import javax.validation.constraints.Size;
 @Entity
 @Data
 @Builder
-public class Category {
+@AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Category implements Serializable {
+
+    public Category(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

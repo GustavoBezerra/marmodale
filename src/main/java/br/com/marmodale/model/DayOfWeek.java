@@ -1,5 +1,7 @@
 package br.com.marmodale.model;
 
+import lombok.NoArgsConstructor;
+
 public enum DayOfWeek {
     SEGUNDA("Segunda-feira",1),
     TERCA("Terça-feira",2),

@@ -1,11 +1,14 @@
 package br.com.marmodale.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -16,7 +19,11 @@ import java.util.List;
 @Entity
 @Data
 @Builder
-public class Ingredient {
+@AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Ingredient implements Serializable {
+
+    public Ingredient(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

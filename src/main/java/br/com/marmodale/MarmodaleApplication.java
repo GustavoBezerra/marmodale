@@ -28,10 +28,10 @@ public class MarmodaleApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Category categoria = Category.builder().name("Mistura").build();
+		Category categoria = Category.builder().name("Sobremesa").build();
 
 		Ingredient frango = Ingredient.builder()
-				.name("Frango")
+				.name("Sagui")
 				.category(categoria)
 				.dataValidade(LocalDate.now())
 				.dayOfWeekAvailables(Lists.newArrayList(DayOfWeek.SEGUNDA, DayOfWeek.QUINTA))
